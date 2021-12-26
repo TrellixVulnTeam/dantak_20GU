@@ -1,6 +1,5 @@
 import nltk
-nltk.downloader.download("SentimentIntensityAnalyzer")
-
+nltk.download('vader_lexicon')
 
 import pandas as pd
 import streamlit as st
