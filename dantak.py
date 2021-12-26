@@ -1,4 +1,3 @@
-import yaml
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -9,12 +8,9 @@ from googleapiclient.discovery import build
 from translate import Translator
 from scipy import signal
 
-CONFIG_FILE = "auth.yaml"
-with open(CONFIG_FILE, "r") as config_file:
-        config = yaml.safe_load(config_file)
-YOUTUBE_KEY = config["youtube"]["api_key"]
-PLAYLIST_ID = config["youtube"]["playlist_id"]
-TRANSLATOR_KEY = config["translator"]["api_key"]
+YOUTUBE_KEY = st.secrets["youtube_key"]
+PLAYLIST_ID = st.secrets("playlist_id")
+TRANSLATOR_KEY = st.secrets("translator_key")
 youtube = build("youtube", "v3", developerKey=YOUTUBE_KEY)
 
 def get_res(pageToken = None):
