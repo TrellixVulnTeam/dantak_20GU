@@ -9,8 +9,8 @@ from translate import Translator
 from scipy import signal
 
 YOUTUBE_KEY = st.secrets["youtube_key"]
-PLAYLIST_ID = st.secrets("playlist_id")
-TRANSLATOR_KEY = st.secrets("translator_key")
+PLAYLIST_ID = st.secrets["playlist_id"]
+TRANSLATOR_KEY = st.secrets["translator_key"]
 youtube = build("youtube", "v3", developerKey=YOUTUBE_KEY)
 
 def get_res(pageToken = None):
